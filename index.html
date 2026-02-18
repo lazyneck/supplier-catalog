@@ -623,7 +623,7 @@
   <div class="cart-footer" id="cart-footer" style="display:none">
     <div class="cart-total">
       <span>Total</span>
-      <span id="cart-total-price">₪0</span>
+      <span id="cart-total-price">€0</span>
     </div>
     <button class="checkout-btn" onclick="openCheckout()">Proceed to Order →</button>
   </div>
@@ -710,7 +710,7 @@
       name: 'Premium Tahini',
       description: 'Cold-pressed Tahini, 1L bottle. Rich flavor, for cooking and dressings.',
       price: 45,
-      currency: '₪',
+      currency: '€',
       emoji: '🫙',
       unit: 'bottle',
     },
@@ -719,7 +719,7 @@
       name: 'Whole Grain Rice',
       description: '5kg bag of organic whole grain rice. Naturally nutty flavor, high in fiber.',
       price: 38,
-      currency: '₪',
+      currency: '€',
       emoji: '🌾',
       unit: 'bag',
     },
@@ -728,7 +728,7 @@
       name: 'Honey Jar',
       description: 'Pure wildflower honey, 500g. Harvested locally, no additives.',
       price: 52,
-      currency: '₪',
+      currency: '€',
       emoji: '🍯',
       unit: 'jar',
     },
@@ -737,7 +737,7 @@
       name: 'Sea Salt',
       description: 'Coarse Mediterranean sea salt, 1kg. Unrefined, mineral-rich.',
       price: 18,
-      currency: '₪',
+      currency: '€',
       emoji: '🧂',
       unit: 'pack',
     },
@@ -746,7 +746,7 @@
       name: 'Dried Herbs Mix',
       description: 'Premium blend of thyme, oregano and rosemary. 200g resealable bag.',
       price: 26,
-      currency: '₪',
+      currency: '€',
       emoji: '🌿',
       unit: 'bag',
     },
@@ -755,7 +755,7 @@
       name: 'Tomato Paste',
       description: 'Concentrated tomato paste, 200g. Made from sun-ripened tomatoes.',
       price: 14,
-      currency: '₪',
+      currency: '€',
       emoji: '🍅',
       unit: 'can',
     },
@@ -847,7 +847,7 @@
         </div>
       `).join('');
       footer.style.display = 'block';
-      document.getElementById('cart-total-price').textContent = `${items[0]?.currency || '₪'}${total}`;
+      document.getElementById('cart-total-price').textContent = `${items[0]?.currency || '€'}${total}`;
     }
   }
 
@@ -867,7 +867,7 @@
     closeCart();
 
     const total = items.reduce((s, i) => s + i.price * i.qty, 0);
-    const currency = items[0]?.currency || '₪';
+    const currency = items[0]?.currency || '€';
 
     const summaryEl = document.getElementById('order-summary');
     summaryEl.innerHTML = `
@@ -910,7 +910,7 @@
 
     const items = Object.values(cart);
     const total = items.reduce((s, i) => s + i.price * i.qty, 0);
-    const currency = items[0]?.currency || '₪';
+    const currency = items[0]?.currency || '€';
 
     const orderLines = items.map(i => `• ${i.name} ×${i.qty}  →  ${currency}${i.price * i.qty}`).join('\n');
 
